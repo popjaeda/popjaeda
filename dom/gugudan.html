@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div>
+
+    </div>
+    <script>
+        /*
+        var i = 2;
+        var j = 1;
+        
+        // for 문
+        document.write("구구단", "<br>");
+        for (i = 2; i < 10; i++) {
+            for (j = 1; j < 10; j++) {
+                document.write(i + " * " + j + " = " + (i * j) + "<br>");
+            }
+            document.write("<hr>");
+        }
+        */
+        let div = document.querySelector("div");
+        let str = "<ul>";
+        for(let i=2; i<10; i++){
+            str = str +`<li><h3>${i}단입니다.</h3><ul>`;
+            str = str +"</li>";
+            for(let j=1; j<10; j++){
+                str = str +`<li>${i}*${j}=${i*j} </li>`
+            }
+        }
+        str = str + "</ul>";
+        div.innerHTML = str;
+
+        for(let i=1;i<5;i++){
+            for(let j=5; j<10; j++){
+                console.log(`i는 : ${i}이다.`)
+                console.log(`j는 : ${j}이다.`)
+            }
+        }
+    </script>
+</body>
+</html>

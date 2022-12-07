@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="lotto"></div>
+    <script>
+        //1. 45개의 숫자만들기
+        //2. 숫자섞기
+        //3. 보너스숫자뽑기 : 섞은 배열 마지막 요소
+        //4. 로또 숫자 뽑기 : 배옆 앞에 6개
+        //5. 숫자 출력
+        const lotto = [];
+        for (let i=1; i<=45; i+=1) {
+            lotto.push(i);
+        }
+        let mixedNum = [];
+        while(lotto.length>0) {
+            let num = Math.floor(Math.random() * lotto.length);
+            let leftnum = lotto.splice(num,1)[0];
+            mixedNum.push(leftnum);
+        }
+        console.log(mixedNum);
+        let bonus = mixedNum[mixedNum.length-1];
+        console.log(bonus);
+
+        let lottoNum = mixedNum.slice(0,6).sort((bbak,bbakk)=>bbak-bbakk);
+        console.log(lottoNum);
+        console.log(`로또숫자 : ${lottoNum},보너스숫자 ${bonus}`)
+    </script>
+</body>
+</html>

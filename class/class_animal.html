@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal {
+            constructor(name){
+                this.name = name;
+                this.speed = 0;
+            }
+            run(speed){
+                this.speed = speed;
+                console.log(`${this.name}은 ${this.speed}로 달립니다.`);
+            }
+        }
+        let animal1 = new Animal("동물");
+        let keysArr = Object.keys(animal1);
+        console.log(keysArr);
+
+        let animal2 = {
+            name: "동물2",
+            speed: 0,
+            run: function(){
+                console.log(`${this.name}은 ${this.speed}로 달립니다.`);
+            }
+        }
+        let keysArr2 = Object.keys(animal2);
+        console.log(keysArr2);
+
+        class Rabbit extends Animal {
+            hide(){
+                alert(`${this.name}이 숨었습니다.`)
+            }
+        }
+        let rabbit = new Rabbit("흰토끼"); // name, speed, run(), hide()
+        rabbit.run(10);
+        rabbit.hide();
+    </script>
+</body>
+</html>

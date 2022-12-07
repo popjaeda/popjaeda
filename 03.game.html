@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //주사위는 눈금이 1~6
+        //컴퓨터와 사람 랜덤하게 주사위값을 지정
+        //지정된 주사위값을 출력
+        //주사위값을 비교하여 승리자를 출력
+        function gameGo(){
+            let com_dice = Math.floor(Math.random() * 6) + 1 ;
+            let per_dice = Math.floor(Math.random() * 6) + 1 ;
+            console.log(`컴퓨터 주사위 : ${com_dice} , 사람주사위 : ${per_dice}`);
+            if(com_dice == per_dice) {
+                console.log("비겼습니다.")
+            }else if (com_dice > per_dice) {
+                console.log("컴퓨터가 이겼습니다.")
+            }else {
+                console.log("사람이 이겼습니다.")
+            }
+        }
+        gameGo();
+    </script>
+</body>
+</html>

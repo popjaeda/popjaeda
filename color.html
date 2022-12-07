@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: black;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <input type="button" value="pink색상" id="pink" onclick="background('pink')">
+    <input type="button" value="red색상" id="red" onclick="background('red')">
+    <input type="button" value="blue색상" id="blue" onclick="background('blue')">
+    <input type="button" value="green색상" id="green" onclick="background('green')">
+    <script>
+        /*
+        function background() {
+            document.querySelector("div").style.backgroundColor = "pink"
+        }
+        function background2() {
+            document.querySelector("div").style.backgroundColor = "red"
+        }
+        function background3() {
+            document.querySelector("div").style.backgroundColor = "blue"
+        }
+        function background4() {
+            document.querySelector("div").style.backgroundColor = "green"
+        }
+        */
+        function background(i) {
+            document.querySelector("div").style.backgroundColor = i;
+        }
+    </script>
+</body>
+</html>

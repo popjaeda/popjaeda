@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.사용자로부터 입력을 받는다.
+        //2.가위, 바위, 보 
+        let rps = prompt("가위,바위,보중 하나를 입력하세요");
+        if(rps!=="가위"&&rps!=="바위"&&rps!=="보") {
+            console.log("잘못입력하셨습니다.");
+        }else {
+            console.log(rps);
+        }
+        //컴퓨터의 랜덤 가위, 바위, 보를 지정
+        //가위, 바위, 보를 랜덤하게 리턴
+        function rpsRandom() {
+            let result = num =0? "가위":num ==1 ? "바위" : "보"
+            if(num==0){
+                result = "가위";
+            }else if(num==1){
+                result = "바위"
+            }else {
+                result = "보";
+            }
+            return result;
+            let num = Math.floor(Math.random() * 3);
+            return num;
+        }
+        //게임시작 함수
+        function rpsGame(rps){
+            let com_rps = rpsRandom();
+            console.log(`당신 : ${rps}, 컴퓨터 : ${com_rps}`)
+            if(rps==comprs){
+                consolog("비겼습니다");
+            }else se (rps=="가위" && rps =="보" && com_rps == "바위");
+            console.log("당신이 이겼습니다.")
+        }
+    </script>
+</body>
+</html>

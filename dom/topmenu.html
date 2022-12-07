@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        ul {
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            height: 100px;
+        }
+        li {
+            list-style: none;
+            padding: 0 20px;
+        }
+        div {
+            background-color: tomato;
+            height: 0;
+            transition: 0.5s;
+        }
+        .on {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+    </ul>
+    <div></div>
+    <script>
+        //list1에 마우스 올렸을때 div의 class명 on을 지정
+        let li = document.querySelector("li:nth-child(1)");
+        let div = document.querySelector("div");
+        li.addEventListener("mouseenter",function(){
+            div.classList.add("on");
+        })
+        li.addEventListener("mouseleave",function(){
+            div.classList.remove("on");
+        })
+    </script>
+</body>
+</html>

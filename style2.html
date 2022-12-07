@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 1000px;
+            height: 500px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div style="font-size: 16px;"></div>
+    <button onclick="chBackground('pink')">pink색상</button>
+    <button onclick="chBackground('red')">red색상</button>
+    <button onclick="chBackground('blue')">blue색상</button>
+    <button onclick="chBackground('green')">green색상</button>
+    <button onclick="bgColorView()">배격색상알기</button>
+    <script>
+        //1.버튼을 클릭할경우 div의 배경색을 변경
+        //*자바스크립트로 스타일 변경
+        //object.style.backgroundcolor ="green"
+        function chBackground(color){
+            document.querySelector('div').style.background = color;
+        }
+        //div의 배경색상을 경고창에 출력
+        function bgColorView(){
+            let div = document.querySelector('div');
+            let bgColor = window.getComputedStyle(div).getPropertyValue('background-color');
+            alert(bgColor);
+        }
+    </script>
+</body>
+</html>

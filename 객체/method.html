@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //this를 써랏
+        let user = {
+            name: "green",
+            age:30
+        }
+        user.sayHi = function () {
+            console.log(this.name);
+        }
+        console.log(this.name);
+        user.sayHi();
+        
+        let user2 = {
+            name:"blue",
+            age:22,
+            sayHi: function () {
+                console.log(this.name)
+            }
+        }
+        user2.sayHi();
+
+        function sayHi () {
+            console.log(this);
+        }
+        sayHi();
+        //this는 . 앞에있는 객체를 참조한다 (없으면 전역객체인 window가 참조된다.)
+        //생성자 함수
+        function Calculator (num1,num2) {
+            this.num1 = num1;
+            this.num2 = num2;
+            this.sum = function () {
+                return this.num1+this.num2;
+            }
+            this.mul = function (){
+                return this.num1+this.num2;
+            }
+        }
+        let calculator = new Calculator(10,20);
+        let result1 = calculator.sum();
+        let result2 = calculator.mul();
+        console.log(`숫자 두개의 합은 ${result1} 이다.`);
+        console.log(`숫자 두개의 합은 ${result2} 이다.`);
+        let calculator2 = {
+            num1: 10,
+            num2: 30,
+            sum() {
+                return this.num1 + this.num2
+            },
+            mul() {
+                return this.num1 * this.num2
+            }
+        }
+        console.log(calculator2.sum());
+        //Accumulator 생성자 함수 만들기
+        //startNum프로퍼티
+        //read()메소드
+        //startNum + 입력값더해서 리턴
+        function Accumulator (startNum) {
+            this.startNum = startNum;
+            this.prompt = prompt("안녕?"); 
+            this.read = function (hi) {
+                return this.startNum + this.prompt;
+            }
+        }
+        let Accumulators = new Accumulator(20);
+        console.log(Accumulators.read());
+        console.log(Accumulator(10));
+    </script>
+</body>
+</html>

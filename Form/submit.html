@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="join.php" method="get" onsubmit="return formCheck()">
+        <p>아이디 <input type="text" id="userId" name="useId"></p>
+        <p>비밀번호 <input type="text" id="userPw" name="usePw"></p>
+        <p><button type="submit">전송</button></p>
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit",function(e){
+            //기본이벤트 제거
+            e.preventDefault()
+        })
+        function formCheck(){
+            this.preventDefault()
+            console.log("폼을 확인합니다.");
+            //아이디입력시 빈칸이아니고 글자수가 5개 이상인지 체크
+            //비밀번호 입력시 빈칸이 아니고 글자수가 5개 이상이며
+            //숫자가 하나이상 포함 소문자도 하나이상 포함
+            //대문자도 하나이상포함
+        }
+    </script>
+</body>
+</html>
+
+<!-- 파파팝 파팝 -->
+<!-- 파파팝 파팝 -->
+<!-- 파파팝 파팝 -->
+<!-- 설~~렘이 멎기전에 아워너 멬유 팝팝 팝 유 원잇 -->
+<!-- 파파팝 터지길 원해 -->
+<!-- 가~슴이 뛰는 이 느낌 -->
+<!-- 아워너 멬유 팝팝 팝유원잇-->
+<!-- 파파팝 터지길 원해 -->

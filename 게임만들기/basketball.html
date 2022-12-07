@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/basketball.css">
+</head>
+<body>
+    <div id="wrap">
+        <!--점수판-->
+        <!--
+               shorts-left -> 남은 슛 횟수
+               computer-score -> 컴퓨터 현재 점수
+               user-score -> 사용자 현재 점수
+               text -> 안내문구
+        -->
+            <div class="div-scoreboard inner">
+                <div class="div-short-left">
+                    <span>남은 슛 횟수</span>
+                    <span id="shorts-left">15</span>
+                </div>
+                <div class="div-score">
+                    <div class="div-score-list">
+                        <div class="div-score-name">컴퓨터</div>
+                        <div id="computer-score" class="div-score-number">0</div>
+                    </div>
+                    <div class="div-score-list">
+                         <div class="div-score-name">사람</div>
+                        <div id="user-score" class="div-score-number">0</div>
+                    </div>   
+                </div>
+                    <div id="text">컴퓨터부터 시작합니다.</div>
+            </div>
+        <!--조작부-->
+            <div class="div-control-panel">
+                <div id="div-computer" class="div-panel">
+                    <div>컴퓨터</div>
+                    <button onclick="onComputerShoot()" class="btn-computer">슛하기</button>
+                </div>
+                <div id="div-user" class="div-panel">
+                    <div>사용자</div>
+                    <button class="btn-user" onclick="onUserShoot(2)" disabled>2점슛</button>
+                    <button  class="btn-user" onclick="onUserShoot(3)" disabled>3점슛</button>
+                </div>
+            </div>
+    </div>
+    <script>
+        /*
+        3점슛은 30%확률로 성공
+        2점슛은 50확률로 성공 
+        결과는 텍스트로 표시
+        성공하면 컴퓨터의 점수를 더해준다
+        컴퓨터 순서가 끝나면 사용자의순서가된다.
+        사용자는 2점슛 3점슛을 선택할수있다.
+        2점슛은 50%확률로 성공
+        3점슛은 30%확률로 성공
+        결과는 텍스트로 표시
+        성공시 사람의 점수를 더해준다.
+        사용자 턴이끝나면 남은 슛 횟수가 1씩 줄어든다.
+        <button disabled="false"></button>
+        */
+       
+        //컴퓨터 유저 선언문
+       let comScore = 0;                                            
+       let userScore = 0;
+       let comScoreElem = document.querySelector("computer-score");
+       let userScroeElem = document.querySelector("user-score");
+       let textElem = document.getElementById("text")
+       let isComputerTrun = true;
+       let shotsleft = 15;
+        //컴퓨터의 2점슛 3점슛 히바...
+       function onComputerShoot() {
+        if(!isComputerTrun)
+        return;
+        let shootType;
+       }
+       shootType = Math.random() ? 0.5 < 2:3 ;
+       if(shootType===2) {
+        if(Math.random() < 0.5) {
+            textElem.innerHTML = "컴터 2점 획득쓰";
+            comScore += 2;
+        }else {
+            textElem.innerHTML = "컴터 2점 획득실패쓰";
+        }
+       }else {
+        if(Math.random() < 0.33) {
+            textElem.innerHTML = "컴터 3점 획득쓰";
+            comScore += 3;
+        }else {
+            textElem.innerHTML = "컴터 3점 획득실패쓰";
+        }
+       }
+       comScoreElem.innerHTML = comScore;
+       isComputerTrun = false;
+       let computerButton = document.getElementsByClassName("btn-computer");
+       for(let i=0; i<computerButton.length; i++) {
+        computerButton[i].disabled = true;
+       }
+       let userButton = document.getElementsByClassName("btn-user");
+       for(let i=0; i<userButton.length; i++) {
+        userButton[i].disabled = false;
+       }
+       function onUserShoot (jum) {
+        if(isComputerTrun)
+        return;
+        if(jum===2) {
+            if(Math.random() < 0.5) {
+                textElem.innerHTML = "2점 개이덕";
+                userScore+=2;
+            }else {
+                textElem.innerHTML = "2점 까비;;"
+            }
+        }else {
+            if(Math.random() < 0.33) {
+                textElem.innerHTML = "3점 개이덕"
+                userScore += 3;
+            }else {
+                textElem.innerHTML = "3점 까비;;ㄷㄷ"
+            }
+        }
+       }
+    </script>
+</body>
+</html>

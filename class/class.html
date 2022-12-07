@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //클래스선언
+        class Person {
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            speak(){
+                console.log(`${this.name} : hello!!`);
+            }
+        }
+        const min = new Person("민영",48);
+        console.log(min);
+        console.log(min.name);
+        //메소드 호출
+        min.speak();
+
+
+        //학생클래스 생성
+        class Student {
+            constructor(name,age,enrolled,score){
+                this.name = name;
+                this.age = age;
+                this.enrolled = enrolled;
+                this.score = score;
+            }
+        }
+        const students = [
+            new Student('a',29,true,45),
+            new Student('b',28,false,80),
+            new Student('c',30,true,90),
+            new Student('d',40,false,66),
+            new Student('e',18,true,88)
+        ];
+        console.log(students);
+
+        //상속과 다형성
+        //동물
+        //고양이
+        class Shape {
+            constructor(width,height,color){
+                this.width = width;
+                this.height = height;
+                this.color = color;
+            }
+            draw(){
+                super.draw();
+                console.log(`${this.color}로 그립니다.`)
+            }
+            getArea(){
+                return this.width * this.height;
+            }
+        }
+        //상속 키워드 extends
+        class Rectangle extends Shape {
+
+        }
+        class Triangle extends Shape {
+
+        }
+        const rectangle = new Rectangle(20,20,'blue');
+        rectangle.draw();
+        console.log(rectangle.getArea());
+        console.log(rectangle);
+    </script>
+</body>
+</html>
